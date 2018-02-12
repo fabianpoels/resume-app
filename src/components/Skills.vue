@@ -7,7 +7,7 @@
     <div id="left">
       <h2>Programming languages</h2>
       <ul>
-        <li v-for="(programmingLanguage) in skills.programmingLanguages">
+        <li v-for="programmingLanguage in skills.programmingLanguages">
           {{programmingLanguage.language}}
           <span class="skillLevel" :class="programmingLanguage.skill">{{programmingLanguage.skill}}</span>
         </li>

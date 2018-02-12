@@ -5,7 +5,13 @@
     </div>
     <div id="experience" v-if="experience">
       <ul>
-        
+        <li v-for="e in experience">
+          <ul>
+            <li class="title"><span class="name">{{e.name}}</span> / {{e.function}}</li>
+            <li class="timespan">{{e.timespan}}, {{e.location}}</li>
+            <li class="description">{{e.description}}</li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
@@ -51,5 +57,26 @@ export default {
 </script>
 
 <style>
+div#experience {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+div#experience ul {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+div#experience ul li span.name {
+  font-weight: bold;
+}
+
+div#experience ul li.timespan {
+  color: #666;
+  margin-top: -2px;
+  text-transform: uppercase;
+  font-size: 85%;
+}
 
 </style>
