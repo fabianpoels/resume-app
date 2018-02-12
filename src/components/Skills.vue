@@ -3,29 +3,31 @@
   <div id="spinner" v-if="loading">
     <spinner></spinner>
   </div>
-  <div id="skills" v-if="skills">
-    <div id="left">
-      <h2>Programming languages</h2>
-      <ul>
-        <li v-for="programmingLanguage in skills.programmingLanguages">
-          {{programmingLanguage.language}}
-          <span class="skillLevel" :class="programmingLanguage.skill">{{programmingLanguage.skill}}</span>
-        </li>
-      </ul>
-      <h2>Frameworks</h2>
-      <ul>
-        <li v-for="(framework) in skills.frameworks">
-          {{framework.name}}
-        </li>
-      </ul>
-      <h2>Other</h2>
-      <ul>
-        <li v-for="(o) in skills.other">
-          {{o.name}}
-        </li>
-      </ul>
+  <transition name="fade">
+    <div id="skills" v-if="skills">
+      <div id="left">
+        <h2>Programming languages</h2>
+        <ul>
+          <li v-for="programmingLanguage in skills.programmingLanguages">
+            {{programmingLanguage.language}}
+            <span class="skillLevel" :class="programmingLanguage.skill">{{programmingLanguage.skill}}</span>
+          </li>
+        </ul>
+        <h2>Frameworks</h2>
+        <ul>
+          <li v-for="(framework) in skills.frameworks">
+            {{framework.name}}
+          </li>
+        </ul>
+        <h2>Other</h2>
+        <ul>
+          <li v-for="(o) in skills.other">
+            {{o.name}}
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </transition>
 </div>
 </template>
 
@@ -69,6 +71,13 @@ export default {
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 div#skills {
   margin-top: 50px;
 }

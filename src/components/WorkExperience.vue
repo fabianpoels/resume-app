@@ -3,17 +3,19 @@
     <div id="spinner" v-if="loading">
       <spinner></spinner>
     </div>
-    <div id="experience" v-if="experience">
-      <ul>
-        <li v-for="e in experience">
-          <ul>
-            <li class="title"><span class="name">{{e.name}}</span> / {{e.function}}</li>
-            <li class="timespan">{{e.timespan}}, {{e.location}}</li>
-            <li class="description">{{e.description}}</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <transition name="fade">
+      <div id="experience" v-if="experience">
+        <ul>
+          <li v-for="e in experience">
+            <ul>
+              <li class="title"><span class="name">{{e.name}}</span> <span class="orange">/</span> {{e.function}}</li>
+              <li class="timespan">{{e.timespan}}, {{e.location}}</li>
+              <li class="description">{{e.description}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -57,6 +59,13 @@ export default {
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 div#experience {
   width: 60%;
   margin: auto;
@@ -70,6 +79,10 @@ div#experience ul {
 
 div#experience ul li span.name {
   font-weight: bold;
+}
+
+div#experience ul li span.orange {
+  color: #f2511b;
 }
 
 div#experience ul li.timespan {
