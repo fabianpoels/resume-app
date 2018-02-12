@@ -5,7 +5,6 @@
       <router-link :to="{name: 'Skills'}"><span class="navDecoration">&lt;</span>Skills<span class="navDecoration">&gt;</span></router-link>
       <router-link :to="{name: 'WorkExperience'}"><span class="navDecoration">&lt;</span>Experience<span class="navDecoration">&gt;</span></router-link>
       <router-link :to="{name: 'Education'}"><span class="navDecoration">&lt;</span>Education<span class="navDecoration">&gt;</span></router-link>
-      <router-link :to="{name: 'Miscellaneous'}"><span class="navDecoration">&lt;</span>Miscellaneous<span class="navDecoration">&gt;</span></router-link>
     </nav>
     <router-view></router-view>
   </div>
