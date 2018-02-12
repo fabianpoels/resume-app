@@ -62,12 +62,14 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
+
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
 div#experience {
-  width: 60%;
+  width: 10%;
+  min-width: 1000px;
   margin: auto;
   margin-top: 50px;
 }
@@ -75,6 +77,7 @@ div#experience {
 div#experience ul {
   list-style-type: none;
   margin-bottom: 20px;
+  padding: 0;
 }
 
 div#experience ul li span.name {
@@ -83,6 +86,7 @@ div#experience ul li span.name {
 
 div#experience ul li span.orange {
   color: #f2511b;
+  font-weight: bold;
 }
 
 div#experience ul li.timespan {

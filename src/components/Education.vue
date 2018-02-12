@@ -68,14 +68,16 @@ export default {
 }
 
 div#education {
-  width: 60%;
-  margin: auto;
+  width: 1%;
+  min-width: 450px;
+  margin: 0 auto;
   margin-top: 50px;
 }
 
 div#education ul {
   list-style-type: none;
   margin-bottom: 20px;
+  padding: 0;
 }
 
 div#education ul li span.instance {
@@ -84,6 +86,7 @@ div#education ul li span.instance {
 
 div#education ul li span.orange {
   color: #f2511b;
+  font-weight: bold;
 }
 
 div#education ul li.timespan {
