@@ -68,7 +68,7 @@ export default {
 }
 
 div#education {
-  width: 1%;
+  width: 10%;
   min-width: 450px;
   margin: 0 auto;
   margin-top: 50px;

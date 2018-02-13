@@ -5,7 +5,10 @@
   </div>
   <transition name="fade">
     <div id="skills" v-if="skills">
-      <div id="left">
+      <div class="box">
+        <p>{{skills.description}}</p>
+      </div>
+      <div class="box">
         <h2>Programming languages</h2>
         <ul>
           <li v-for="programmingLanguage in skills.programmingLanguages">
@@ -13,12 +16,16 @@
             <span class="skillLevel" :class="programmingLanguage.skill">{{programmingLanguage.skill}}</span>
           </li>
         </ul>
+      </div>
+      <div class="box">
         <h2>Frameworks</h2>
         <ul>
           <li v-for="(framework) in skills.frameworks">
             {{framework.name}}
           </li>
         </ul>
+      </div>
+      <div class="box">
         <h2>Other</h2>
         <ul>
           <li v-for="(o) in skills.other">
@@ -26,11 +33,19 @@
           </li>
         </ul>
       </div>
+      <div class="box">
+        <h2>Languages</h2>
+        <ul>
+          <li v-for="(language) in skills.languages">
+            {{language.language}}
+            <span class="skillLevel" :class="language.skill">{{language.skill}}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </transition>
 </div>
 </template>
-
 <script>
 import axios from 'axios'
 import Spinner from '@/components/Spinner'
@@ -79,27 +94,35 @@ export default {
 }
 
 div#skills {
+  width: 85%;
+  margin: auto;
   margin-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
 }
 
-div#skills div#left {
-  width: 40%;
-  text-align: right;
+div#skills .box {
+  flex-grow: 1;
+  padding: 10px;
 }
 
-div#skills div#left h2 {
+div#skills .box h2 {
   font-weight: normal;
   clear: both;
   margin-bottom: 0;
 }
 
-div#skills div#left ul {
-  float: right;
-  width: 50%;
+div#skills .box ul {
   list-style-type: none;
 }
 
-div#skills div#left ul li .skillLevel {
+div#skills .box ul li {
+  text-align: justify;
+}
+
+div#skills .box ul li .skillLevel {
   width: 200px;
 }
 
