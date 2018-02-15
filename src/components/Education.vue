@@ -6,7 +6,7 @@
     <transition name="fade">
       <div id="education" v-if="education">
         <ul>
-          <li v-for="e in education">
+          <li v-for="e in education" :key="e.degree">
             <ul>
               <li class="title"><span class="instance">{{e.instance}}</span> <span class="orange">/</span> {{e.degree}}</li>
               <li class="timespan">{{e.timespan}}</li>

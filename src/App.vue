@@ -20,7 +20,6 @@ export default {
 div#app {
   width: 100%;
   font-family: 'Titillium Web', sans-serif;
-  /*font-family: 'Lato', sans-serif;*/
 }
 
 div#spinner {

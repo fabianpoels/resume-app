@@ -1,19 +1,8 @@
 <template>
   <div id="skillLevel">
-    <img v-if="level < 1" src="static/circle_empty.png" width="15px" height="15px">
-    <img v-else src="static/circle_filled.png" width="15px" height="15px">
-
-    <img v-if="level < 2" src="static/circle_empty.png" width="15px" height="15px">
-    <img v-else src="static/circle_filled.png" width="15px" height="15px">
-
-    <img v-if="level < 3" src="static/circle_empty.png" width="15px" height="15px">
-    <img v-else src="static/circle_filled.png" width="15px" height="15px">
-
-    <img v-if="level < 4" src="static/circle_empty.png" width="15px" height="15px">
-    <img v-else src="static/circle_filled.png" width="15px" height="15px">
-
-    <img v-if="level < 5" src="static/circle_empty.png" width="15px" height="15px">
-    <img v-else src="static/circle_filled.png" width="15px" height="15px">
+    <div id="orange">{{getOpacity()}}</div>
+    <div id="corner"></div>
+    <div id="fill"></div>
   </div>
 </template>
 
@@ -23,6 +12,11 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods: {
+    getOpacity () {
+      return (0.5 + ((this.level - 1) * 0.1666))
     }
   },
   props: ['level']

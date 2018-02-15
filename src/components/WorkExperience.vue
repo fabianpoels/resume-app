@@ -6,7 +6,7 @@
     <transition name="fade">
       <div id="experience" v-if="experience">
         <ul>
-          <li v-for="e in experience">
+          <li v-for="e in experience" :key="e.function">
             <ul>
               <li class="title"><span class="name">{{e.name}}</span> <span class="orange">/</span> {{e.function}}</li>
               <li class="timespan">{{e.timespan}}, {{e.location}}</li>

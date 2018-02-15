@@ -5,13 +5,13 @@
   </div>
   <transition name="fade">
     <div id="skills" v-if="skills">
-      <div class="box" id="description">
+    <!--  <div class="box" id="description">
         <p>{{skills.description}}</p>
-      </div>
+      </div>-->
       <div class="box">
         <h2>Programming languages</h2>
         <ul>
-          <li v-for="programmingLanguage in skills.programmingLanguages">
+          <li v-for="programmingLanguage in skills.programmingLanguages" :key="programmingLanguage.language">
             {{programmingLanguage.language}}
             <skill-level v-bind:level="programmingLanguage.skill"></skill-level>
           </li>
@@ -20,7 +20,7 @@
       <div class="box">
         <h2>Frameworks</h2>
         <ul>
-          <li v-for="(framework) in skills.frameworks">
+          <li v-for="framework in skills.frameworks" :key="framework.name">
             {{framework.name}}
             <skill-level v-bind:level="framework.skill"></skill-level>
           </li>
@@ -29,7 +29,7 @@
       <div class="box">
         <h2>Other</h2>
         <ul>
-          <li v-for="(o) in skills.other">
+          <li v-for="o in skills.other" :key="o.name">
             {{o.name}}
             <skill-level v-bind:level="o.skill"></skill-level>
           </li>
@@ -38,7 +38,7 @@
       <div class="box">
         <h2>Languages</h2>
         <ul>
-          <li v-for="(language) in skills.languages">
+          <li v-for="language in skills.languages" :key="language.language">
             {{language.language}}
             <skill-level v-bind:level="language.skill"></skill-level>
           </li>
@@ -98,7 +98,8 @@ export default {
 }
 
 div#skills {
-  width: 85%;
+  width: 10%;
+  min-width: 600px;
   margin: auto;
   margin-top: 50px;
   display: flex;
@@ -110,11 +111,12 @@ div#skills {
 div#skills .box {
   flex-grow: 1;
   padding: 10px;
-  max-width: 400px;
+  max-width: 300px;
 }
 
-div#skills #description {
-  max-width: 100%;
+div#skills .box #description {
+ /*  max-width: 100%;*/
+ flex-grow: 3;
 }
 
 div#skills .box h2 {
