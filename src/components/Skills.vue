@@ -5,7 +5,7 @@
   </div>
   <transition name="fade">
     <div id="skills" v-if="skills">
-      <div class="box">
+      <div class="box" id="description">
         <p>{{skills.description}}</p>
       </div>
       <div class="box">
@@ -13,7 +13,7 @@
         <ul>
           <li v-for="programmingLanguage in skills.programmingLanguages">
             {{programmingLanguage.language}}
-            <span class="skillLevel" :class="programmingLanguage.skill">{{programmingLanguage.skill}}</span>
+            <skill-level v-bind:level="programmingLanguage.skill"></skill-level>
           </li>
         </ul>
       </div>
@@ -22,6 +22,7 @@
         <ul>
           <li v-for="(framework) in skills.frameworks">
             {{framework.name}}
+            <skill-level v-bind:level="framework.skill"></skill-level>
           </li>
         </ul>
       </div>
@@ -30,6 +31,7 @@
         <ul>
           <li v-for="(o) in skills.other">
             {{o.name}}
+            <skill-level v-bind:level="o.skill"></skill-level>
           </li>
         </ul>
       </div>
@@ -38,7 +40,7 @@
         <ul>
           <li v-for="(language) in skills.languages">
             {{language.language}}
-            <span class="skillLevel" :class="language.skill">{{language.skill}}</span>
+            <skill-level v-bind:level="language.skill"></skill-level>
           </li>
         </ul>
       </div>
@@ -49,10 +51,12 @@
 <script>
 import axios from 'axios'
 import Spinner from '@/components/Spinner'
+import SkillLevel from '@/components/SkillLevel'
 export default {
   name: 'Skills',
   components: {
-    Spinner
+    Spinner,
+    SkillLevel
   },
   data () {
     return {
@@ -106,6 +110,11 @@ div#skills {
 div#skills .box {
   flex-grow: 1;
   padding: 10px;
+  max-width: 400px;
+}
+
+div#skills #description {
+  max-width: 100%;
 }
 
 div#skills .box h2 {
@@ -116,10 +125,12 @@ div#skills .box h2 {
 
 div#skills .box ul {
   list-style-type: none;
+  padding-left: 0;
 }
 
 div#skills .box ul li {
   text-align: justify;
+  padding-bottom: 5px;
 }
 
 div#skills .box ul li .skillLevel {
