@@ -111,7 +111,7 @@ div#skills {
 div#skills .box {
   flex-grow: 1;
   padding: 10px;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 div#skills .box #description {
