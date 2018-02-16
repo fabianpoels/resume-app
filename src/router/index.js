@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Root from '@/components/Root'
 import PersonalInfo from '@/components/PersonalInfo'
 import Skills from '@/components/Skills'
 import WorkExperience from '@/components/WorkExperience'
@@ -12,8 +11,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Root',
-      component: Root
+      redirect: '/PersonalInfo'
     },
     {
       path: '/PersonalInfo',
