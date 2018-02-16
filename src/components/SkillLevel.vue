@@ -66,7 +66,7 @@ this can/should be done in a much more elegant way
   border-bottom: 6px solid #f2511b;
   border-left: 6px solid #f2511b;
   border-right: 6px solid transparent;
-  transform: scale(0.5, 1) translateX(-6px);
+  transform: scale(0.5, 1) translateX(-7px);
 }
 
 @keyframes fill1 {
