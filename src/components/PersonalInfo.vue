@@ -3,9 +3,17 @@
     <div id="spinner" v-if="loading">
       <spinner></spinner>
     </div>
-    <div id="personalInfo">
-      {{personalInfo}}
-    </div>
+    <transition name="fade">
+      <div id="personalInfo" v-if="personalInfo">
+        <ul>
+          <li>{</li>
+          <li class="info">"name": "<span class="orange">{{personalInfo.name}}</span>",</li>
+          <li class="info">"dateOfBirth": "<span class="orange">{{personalInfo.dateOfBirth}}</span>",</li>
+          <li class="info">"email:" "<span class="orange">hello@fabianpoels.com</span>"</li>
+          <li>}</li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -49,5 +57,26 @@ export default {
 </script>
 
 <style>
+div#personalInfo {
+  width: 10%;
+  min-width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+}
 
+div#personalInfo ul {
+  list-style-type: none;
+}
+
+div#personalInfo ul li.info{
+  padding-left: 20px
+}
+
+.orange {
+  color: #f2511b;
+}
 </style>

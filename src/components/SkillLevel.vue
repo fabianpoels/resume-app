@@ -21,18 +21,15 @@ export default {
       switch (this.level) {
         case 1:
           return 0.4
-          break
         case 2:
           return 0.6
-          break
         case 3:
           return 0.8
-          break
         default:
           return 1
       }
     },
-    getAnimation() {
+    getAnimation () {
       return 'fill' + this.level + ' 1s ease-in'
     }
   },
