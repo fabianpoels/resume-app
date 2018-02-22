@@ -1,21 +1,19 @@
 # resume-app
+Singe page application for my online resume
 
-> Singe page application for my online resume
+## Used technologies
+The app uses VueJS a
 
-## Build Setup
-
+## Running the app
 ``` bash
-# install dependencies
 npm install
-
-# serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
+This will serve the app at `localhost:8080` with hot reloading.
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+To be able to deploy this to Heroku, there is a seperate server script that serves the build to `localhost:5000`:
+``` bash
+npm run build
+npm run start
+```
