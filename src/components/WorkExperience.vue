@@ -68,8 +68,8 @@ export default {
 }
 
 div#experience {
-  width: 10%;
-  min-width: 500px;
+  max-width: 500px;
+  min-width: 320px;
   margin: auto;
   margin-top: 50px;
 }

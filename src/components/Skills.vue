@@ -98,8 +98,8 @@ export default {
 }
 
 div#skills {
-  width: 10%;
-  min-width: 400px;
+  width: 500px;
+  min-width: 320px;
   margin: auto;
   margin-top: 50px;
   display: flex;

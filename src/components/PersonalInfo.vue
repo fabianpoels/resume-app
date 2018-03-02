@@ -58,8 +58,8 @@ export default {
 
 <style>
 div#personalInfo {
-  width: 10%;
-  min-width: 600px;
+  max-width: 500px;
+  min-width: 320px;
   margin: auto;
   margin-top: 50px;
   display: flex;
