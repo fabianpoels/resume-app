@@ -58,4 +58,16 @@ nav a.router-link-active {
   color: #f2511b;
 }
 
+@media screen and (max-width: 700px) {
+  nav {
+    margin-top: 0;
+  }
+
+  nav a {
+    padding-left: 0;
+    text-align: left;
+    display: block;
+  }
+}
+
 </style>
