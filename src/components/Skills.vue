@@ -98,7 +98,7 @@ export default {
 }
 
 div#skills {
-  width: 500px;
+  max-width: 400px;
   min-width: 320px;
   margin: auto;
   margin-top: 50px;
@@ -111,7 +111,7 @@ div#skills {
 div#skills .box {
   flex-grow: 1;
   padding: 10px;
-  max-width: 400px;
+
 }
 
 div#skills .box #description {

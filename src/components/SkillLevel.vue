@@ -47,7 +47,6 @@ this can/should be done in a much more elegant way
   width: 200px;
   display: flex;
   float: right;
-  margin-right: 60px;
   background-color: #f2f2f2;
 }
 
