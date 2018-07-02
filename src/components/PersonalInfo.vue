@@ -8,6 +8,7 @@
         <ul>
           <li>{</li>
           <li class="info">"name": "<span class="orange">{{personalInfo.name}}</span>",</li>
+          <li class="info">"name": "<span class="orange">{{personalInfo.name}}</span>",</li>
           <li class="info">"email:" "<span class="orange">hello@fabianpoels.com</span>"</li>
           <li>}</li>
         </ul>
